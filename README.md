@@ -21,11 +21,14 @@ Let's say you have data in text format
 
 ## Getting Started
 
+<div align="center"> <h1> This code works only in MacOS</h1></div>
+
 I have used [LangChain] framwork as abstraction for working with NLP models (https://python.langchain.com/docs/get_started/introduction.html) and Cohere NLP models for vector embeddings and generative AI. You may sign up for account in [Cohere](https://cohere.com/) and get a API key.
 
 ```
 pip install langchain
 pip install cohere
+pip install victo
 ```
 
 ### Prerequisites
