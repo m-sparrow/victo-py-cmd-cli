@@ -22,7 +22,7 @@ datadump = config.get('DataDump', 'datadump.path')
 kb = config.get('KnowledgeBase', 'knowledgebase.path')
 
 os.environ["COHERE_API_KEY"] = env.api_key
-text_splitter = CharacterTextSplitter(separator = "\n", chunk_size = 1000, chunk_overlap  = 200, length_function = len)
+text_splitter = CharacterTextSplitter(separator = "\n", chunk_size = 1500, chunk_overlap  = 350, length_function = len)
 embeddings = CohereEmbeddings(model="embed-english-light-v2.0")
 
 def newCollection(args):
@@ -77,7 +77,7 @@ def getVector(args):
     try:
         val = json.loads(args)
         rs = fd.getVector(db, val['collection'], val['id'])
-        print(f"Response Code: {rs.errCode} and Response Message: {rs.errMsg}")
+        # print(f"Response Code: {rs.errCode} and Response Message: {rs.errMsg}")
         # print(len(rs.node.vp))
     except KeyError:
         print("Please provide valid details")
@@ -91,7 +91,7 @@ def queryVector(args):
         k_value = val['k-value']
         logical_op = val['logical-op']
 
-        rs = fd.queryVector(db, val['collection'], "cohere-embed-english-light-v2.0", len(query_embed_result), query_embed_result, vd_method, logical_op, k_value, p_value=3.0, include_fault=True)
+        rs = fd.queryVector(db, val['collection'], "cohere-embed-english-light-v2.0", len(query_embed_result), query_embed_result, vector_distance_method=vd_method, logical_op=logical_op, k_value=k_value, p_value=3.0, include_fault=False)
         # print(rs.queryCount)
 
         if(rs.queryCount > 0) :
