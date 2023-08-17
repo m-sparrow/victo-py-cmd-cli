@@ -54,49 +54,49 @@ knowledgebase.path=**This where the system search for data file to split into ch
 ### Add a collection 
 
 ```
-python3 main.py put --args '{"id":"<id>"}'
+python3 main.py add collection --args '{"id":"<id>"}'
 ```
 
 ### Delete a collection
 
 ```
-python3 main.py delete --args '{"id":"<id>"}'
+python3 main.py delete collection --args '{"id":"<id>"}'
 ```
 
 ### Get the count of collection in a database
 
 ```
-python3 main.py count
+python3 main.py collection count
 ```
 
 ### Get the list of collections in a database
 
 ```
-python3 main.py list
+python3 main.py collection list
 ```
 
 ### Add vector records
 
 ```
-python3 main.py put --args '{"collection":"<collection-id>", "data":"<data.txt>"}'
+python3 main.py put vector --args '{"collection":"<collection-id>", "data":"<data.txt>"}'
 ```
 
 ### Delete vector record
 
 ```
-python3 main.py delete -- args '{"collection":"<collection-id>", "id": "<vector-id>"}'
+python3 main.py delete vector -- args '{"collection":"<collection-id>", "id": "<vector-id>"}'
 ```
 
 ### Get a vector record
 
 ```
-python3 main.py get -- args '{"collection":"<collection-id>", "id": "<vector-id>"}'
+python3 main.py get vector -- args '{"collection":"<collection-id>", "id": "<vector-id>"}'
 ```
 
 ### Query vector records
 
 ```
-python3 main.py query -- args '{"collection":"<collection-id>","query":"<question>","vd-method":"< 0 or 1 or 2 or 3>", "k-value": "<knn value upon which search is done>", "logical-op","<-1 or -2 or 0 or 1 or 2>}'
+python3 main.py query vector -- args '{"collection":"<collection-id>","query":"<question>","vd-method":"< 0 or 1 or 2 or 3>", "k-value": "<knn value upon which search is done>", "logical-op","<-1 or -2 or 0 or 1 or 2>}'
 ```
 Vector Distance Method:
 - 0: Euclidean Distance
@@ -114,13 +114,13 @@ Logical Operation
 ### Get the count of vector records in a collection
 
 ```
-python3 main.py count -- args '{"id":"<collection-id>"}'
+python3 main.py count vector -- args '{"id":"<collection-id>"}'
 ```
 
 ### Get the list of vector records in a collection
 
 ```
-python3 main.py list -- args '{"id":"<collection-id>"}'
+python3 main.py list vector -- args '{"id":"<collection-id>"}'
 ```
 
 ## Author
